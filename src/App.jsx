@@ -7,12 +7,26 @@ import appScreenshot from './assets/app-screenshot.png'; // Import your local ap
 
 function App() {
   const [submitted, setSubmitted] = useState(false);
+  const [email, setEmail] = useState(''); // Add state for email input
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Netlify will handle the form submission automatically via data-netlify attribute
-    // For client-side success message, we can set a state
-    setSubmitted(true);
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString(),
+      });
+      setSubmitted(true);
+      setEmail(''); // Clear email field on successful submission
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting your email. Please try again.');
+    }
   };
 
   return (
@@ -41,7 +55,15 @@ function App() {
               <Form name="waitlist" method="POST" netlify netlify-honeypot="bot-field" onSubmit={handleSubmit} className="waitlist-form mx-auto mx-md-0" style={{ maxWidth: '400px' }}>
                 <input type="hidden" name="form-name" value="waitlist" />
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Control type="email" name="email" placeholder="Enter your email" size="lg" required />
+                  <Form.Control
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    size="lg"
+                    required
+                    value={email} // Bind value to state
+                    onChange={(e) => setEmail(e.target.value)} // Update state on change
+                  />
                 </Form.Group>
                 <Button variant="primary" type="submit" size="lg" className="w-100">
                   Join the Waitlist

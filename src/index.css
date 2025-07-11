@@ -1,4 +1,9 @@
 /* Global styles for DanceBuddy Waitlist */
+/* Import Google Font - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Import Bootstrap Icons */
+@import url("../node_modules/bootstrap-icons/font/bootstrap-icons.css");
 
 body {
   margin: 0;
@@ -19,9 +24,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-/* Import Google Font - Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-/* Import Bootstrap Icons */
-@import url("~bootstrap-icons/font/bootstrap-icons.css");

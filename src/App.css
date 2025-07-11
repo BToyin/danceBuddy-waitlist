@@ -6,10 +6,12 @@
   --light-background: #f0f2f5; /* A very light grey for background */
   --text-color: #333;
   --heading-color: #222;
+  --youtube-red: #FF0000; /* Standard YouTube Red */
 }
 
 html, body, #root, .App, .outer-hero-wrapper, .hero-section {
   height: 100%;
+  /* Removed overflow: hidden; */
 }
 
 .outer-hero-wrapper {
@@ -30,7 +32,7 @@ html, body, #root, .App, .outer-hero-wrapper, .hero-section {
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
+  /* Removed overflow: hidden; */
   color: var(--text-color);
   padding: 40px 0; /* Add some vertical padding */
 }
@@ -124,10 +126,18 @@ html, body, #root, .App, .outer-hero-wrapper, .hero-section {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
+  display: inline-flex; /* To align icon and text */
+  align-items: center;
+}
+
+.youtube-link i {
+  font-size: 1.5rem; /* Make icon bigger */
+  color: var(--youtube-red); /* Standard YouTube Red */
+  margin-right: 8px; /* Space between icon and text */
 }
 
 .youtube-link:hover {
-  color: var(--primary-color); /* Highlight on hover */
+  color: var(--youtube-red); /* Highlight on hover */
 }
 
 /* Responsive adjustments */
