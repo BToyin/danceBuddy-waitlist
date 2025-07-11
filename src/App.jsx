@@ -35,10 +35,10 @@ function App() {
             {/* Email Collection Form or Success Message */}
             {submitted ? (
               <div className="alert alert-success" role="alert">
-                Thanks for joining the waitlist! You'll be notified when DanceBuddy launches.
+                Thanks for joining the waitlist! We'll shoot you an email when DanceBuddy launches.
               </div>
             ) : (
-              <Form name="waitlist" method="POST" data-netlify="true" onSubmit={handleSubmit} className="waitlist-form mx-auto mx-md-0" style={{ maxWidth: '400px' }}>
+              <Form name="waitlist" method="POST" netlify netlify-honeypot="bot-field" onSubmit={handleSubmit} className="waitlist-form mx-auto mx-md-0" style={{ maxWidth: '400px' }}>
                 <input type="hidden" name="form-name" value="waitlist" />
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Control type="email" name="email" placeholder="Enter your email" size="lg" required />
