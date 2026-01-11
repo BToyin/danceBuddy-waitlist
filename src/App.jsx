@@ -80,7 +80,7 @@ function App() {
           </Col>
           <Col md={6} className="d-md-block">
             {/* Mobile App Recording */}
-            <video src={appRecording} alt="DanceBuddy App Recording" autoPlay loop playsInline className="app-screenshot" />
+            <video src={appRecording} alt="DanceBuddy App Recording" autoPlay loop muted playsInline className="app-screenshot" />
           </Col>
         </Row>
       </Container>
