@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, Button, Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'; // Custom styles
 import appLogo from './assets/logo.png'; // Import your local logo
-import appRecording from './assets/app-recording.mov'; // Import your local app recording
+import appRecording from './assets/app-recording.mp4'; // Import your local app recording
 
 function App() {
   const [submitted, setSubmitted] = useState(false);
@@ -41,7 +41,7 @@ function App() {
             </div>
 
             {/* Headline and Subtitle */}
-            <h2 className="display-3 fw-bold mb-3">Dance Dictionary In Your Pocket!</h2>
+            <h2 className="display-3 fw-bold mb-3">Dance Library In Your Pocket!</h2>
             <p className="lead mb-4">
               Never lose a dance move, battle or choreography in the pits of your phone gallery again.
             </p>
@@ -80,7 +80,7 @@ function App() {
           </Col>
           <Col md={6} className="d-md-block">
             {/* Mobile App Recording */}
-            <video src={appRecording} alt="DanceBuddy App Recording" autoPlay loop muted playsInline className="app-screenshot" />
+            <video src={appRecording} alt="DanceBuddy App Recording" autoPlay loop playsInline className="app-screenshot" />
           </Col>
         </Row>
       </Container>

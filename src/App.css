@@ -51,7 +51,7 @@ html, body, #root, .App, .outer-hero-wrapper, .hero-section {
   width: 60px;
   height: 60px;
   border-radius: 12px;
-  object-fit: cover;
+  object-fit: contain;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
